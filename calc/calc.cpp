@@ -6,14 +6,27 @@
 #include "mod.h"
 #include "mul.h"
 #include "sub.h"
+
+
+#include <stdlib.h>
+#include <time.h>
+
 // calc.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
+
 int main()
 {
+	srand(time(NULL));
 	int x = 0;
 	int y = 0;
 	int i = 0;
+
+
+	std::cout << "첫번째 수를 입력하세요 : ";
+	std::cin >> x;
+	std::cout << "두번째 수는 자동으로 입력됩니다.";
+	y = rand() % 100;
 
 	for (; i < 10; i++)
 	{
