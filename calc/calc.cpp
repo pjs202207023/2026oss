@@ -1,25 +1,40 @@
-﻿// calc.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
-
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <cstdio>
 #include "add.h"
 #include "dive.h"
 #include "mod.h"
 #include "mul.h"
 #include "sub.h"
-
+// calc.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+//
 
 int main()
 {
 	int x = 0;
 	int y = 0;
+	int i = 0;
 
-	std::cout << "첫번째 수를 입력하세요 : ";
-	std::cin >> x;
-	std::cout << "두번째 수를 입력하세요 : ";
-	std::cin >> y;
+	for (; i < 10; i++)
+	{
+		std::cout << "첫번째 수를 입력하세요 : ";
+		std::cin >> x;
 
-	printf("입력된 수 x[ %d ] y[ %d ]\n", x, y);
+		if (-999 == x)
+		{
+			printf("프로그램을 종료합니다.\n");
+			break;
+		}
+		std::cout << "두번째 수를 입력하세요 : ";
+		std::cin >> y;
+
+	printf("입력 x[ %d ] y[ %d ]\n", x, y);
 	printf("add[ %d ] sub[ %d ] mul[ %d ] dive[ %d ] mod[ %d ]\n", 10, 6, 16, 4, 0);
-	//add(x, y), sub(x, y), mul(x, y), dive(x, y), mod(x, y));
+	add(x, y), sub(x, y), mul(x, y), dive(x, y), mod(x, y));
+
+		printf("입력된 수 x[ %d ] y[ %d ]\n", x, y);
+		printf("add[ %d ] sub[ %d ] mul[ %d ] dive[ %d ] mod[ %d ]\n",
+			add(x, y), sub(x, y), mul(x, y), dive(x, y), mod(x, y));
+	}
+
 }
